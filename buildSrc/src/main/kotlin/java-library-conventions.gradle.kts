@@ -11,6 +11,19 @@ java {
     targetCompatibility = JavaVersion.VERSION_11
 }
 
+val developmentOnly by configurations.creating // used by spring boot devtools
+configurations {
+
+    runtimeClasspath {
+        extendsFrom(developmentOnly)
+        //     resolutionStrategy.failOnVersionConflict()
+    }
+
+    compileOnly {
+        extendsFrom(configurations.annotationProcessor.get())
+    }
+}
+
 dependencies {
     implementation(platform(project(":platform")))
     implementation("org.springframework.boot:spring-boot-starter")
