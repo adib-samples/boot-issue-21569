@@ -24,3 +24,8 @@
 hs_err_pid*
 /.idea/
 /build/
+/buildSrc/build/
+/buildSrc/.gradle/
+/app/build/
+/.gradle/
+/components/util/build/
